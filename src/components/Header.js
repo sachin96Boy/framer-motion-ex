@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 
-function header() {
+function Header() {
   return (
     <header>
       <Box
@@ -35,4 +35,4 @@ function header() {
   );
 }
 
-export default header;
+export default Header;

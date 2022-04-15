@@ -19,8 +19,8 @@ function Home({ imageDetail, image }) {
               <Box className="frame">
                 <LinkDom to={"/model/yasmeen-tariq"}>
                   <ProgressiveImage
-                    src={require("../../assets/image2.wepb")}
-                    placeholder={require("../../assets/image1.jpg")}
+                    src={require("../assets/image2.webp")}
+                    placeholder={require("../assets/image1.jpg")}
                   >
                     {(src) => (
                       <Image w={"100%"} src={src} alt="yasmeen Tariq" />
