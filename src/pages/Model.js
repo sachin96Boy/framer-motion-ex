@@ -1,10 +1,17 @@
 import React from "react";
 import { Box, Flex, Text, Image, Heading } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 import ScrollForMore from "../components/ScrollForMore";
 
 function Model() {
   return (
-    <Box className="single">
+    <Box
+      as={motion.div}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      className="single"
+    >
       <Box className="container-fluid">
         <Flex
           className="ow center top-row"
@@ -14,10 +21,12 @@ function Model() {
         >
           <Box className="top" pb={"40px"}>
             <Box
+              as={motion.div}
+              initial={{ opacity: 0 }}
               className="detail"
               display={"flex"}
               alignItems="center"
-              justifyContent={"space-between"}
+              justifyContent='space-between'
             >
               <Flex className="location" flexDir={"column"}>
                 <Text>1.7393</Text>
@@ -29,7 +38,13 @@ function Model() {
                 </Text>
               </Box>
             </Box>
-            <Box className="model" overflow={"hidden"}>
+            <Box
+              as={motion.div}
+              initial={{ opacity: 0 }}
+              className="model"
+              overflow={"hidden"}
+              display={"flex"}
+            >
               <Box
                 className="first"
                 mr={"72px"}
