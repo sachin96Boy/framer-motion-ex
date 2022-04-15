@@ -3,7 +3,8 @@ import { Box, Flex, Text, Image, Heading } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import ScrollForMore from "../components/ScrollForMore";
 
-function Model() {
+function Model({ imageDetail, image }) {
+  const transition = { duration: 1.5, ease: [0.6, 0.01, -0.02, 0.9] };
   return (
     <Box
       as={motion.div}
@@ -26,7 +27,7 @@ function Model() {
               className="detail"
               display={"flex"}
               alignItems="center"
-              justifyContent='space-between'
+              justifyContent="space-between"
             >
               <Flex className="location" flexDir={"column"}>
                 <Text>1.7393</Text>
@@ -74,6 +75,18 @@ function Model() {
           <Box className="bottom" h={"100%"} w="100%">
             <Box className="image-container-single">
               <Box
+                as={motion.div}
+                initial={{
+                  y: "-50%",
+                  width: imageDetail.width,
+                  height: imageDetail.height,
+                }}
+                animate={{
+                  y: 0,
+                  width: "100%",
+                  height: window.innerWidth > 1440 ? 800 : 400,
+                  transition: { delay: 0.5, ...transition },
+                }}
                 className="thumbnail-single"
                 width={"100%"}
                 h="800px"
@@ -86,6 +99,8 @@ function Model() {
               >
                 <Box className="frame-single">
                   <Image
+                    as={motion.img}
+                    initial={{ scale: 1.1 }}
                     position={"absolute"}
                     w={"100%"}
                     src={require("../assets/image2.webp")}
@@ -102,6 +117,7 @@ function Model() {
         <Box className="container">
           <Box
             className="row"
+            display={"flex"}
             alignItems={"flex-start"}
             justifyContent="space-between"
           >
